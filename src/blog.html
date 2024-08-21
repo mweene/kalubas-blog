@@ -1,0 +1,15 @@
+---
+layout: "layouts/base.njk"
+title: Kaluba's Blog | Blog posts
+tagline: Stories page
+---
+
+<div class="">
+    <h1>{{ tagline }}</h1>
+
+    <ul>
+        {%- for post in collections.post -%}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+        {%- endfor -%}
+    </ul>
+</div>

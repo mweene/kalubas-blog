@@ -1,0 +1,59 @@
+---
+title: Kaluba's Blog | Homepage
+layout: "layouts/base.njk"
+tagline: a simple blog by kaluba joan
+---
+
+<div class="container">
+    <div class="hero__section">
+        <div class="hero__text">
+            <h1>{{ tagline }}</h1>
+
+            <div class="wrapper">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Harum nostrum ducimus neque consectetur iure illum magni
+                    exercitationem.
+                </p>
+
+                <form action="">
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="enter your email..."
+                    />
+                    <button type="submit" class="cta">
+                        Join the newsletter
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="hero__image">
+            <img src="/assets/images/hero-image.jpg" alt="hero image" />
+        </div>
+    </div>
+
+    <div class="blog-section">
+        <h2>our recent stories</h2>
+
+        {%- for post in collections.post -%}
+        <div class="blog-card">
+            <h4>{{ post.data.title }}</h4>
+            <div class="text">
+                <p>{{ post.data.description }}</p>
+                <a href="{{ post.url }}">read more</a>
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+
+    <div class="contact-section">
+        <h2>let's stay in touch</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Temporibus, eum voluptatum ut neque vitae consectetur nemo.
+        </p>
+        <button>Get connected</button>
+    </div>
+</div>
