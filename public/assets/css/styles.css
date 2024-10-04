@@ -1,54 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap");
-
-/*CSS RESETS*/
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-input,
-button {
-    font-family: inherit;
-    font-size: inherit;
-}
-
-img {
-    width: 100%;
-}
-
-h1,
-h2,
-h3 {
-    font-family: "Space Grotesk", sans-serif;
-    line-height: 1;
-    color: #141414;
-}
-
-.hidden {
-    display: none;
-}
-
-.reveal {
-    display: flex !important;
-}
-/***********/
+@import url("resets.css");
+@import url("about.css");
+@import url("blogPage.css");
 
 :root {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     line-height: 1.5;
     color: #010615;
+    --primary-color: #ddd;
+    --secondary-color: #555;
+    --bg-color: #f2f2f2;
+}
+
+body {
+    height: 100dvh;
+    display: grid;
+    background-color: var(--bg-color);
 }
 
 .nav {
@@ -57,11 +25,12 @@ h3 {
     place-items: center;
     position: relative;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--primary-color);
 
     .nav__logo {
         width: inherit;
         height: 2rem;
+        filter: grayscale(1);
     }
 
     .nav__list {
@@ -78,7 +47,7 @@ h3 {
         padding: 1.5rem;
         background-color: #000000e8;
         backdrop-filter: blur(6px);
-        border: 1px solid #555;
+        border: 1px solid var(--secondary-color);
         border-radius: 0.3rem;
 
         a {
@@ -87,7 +56,7 @@ h3 {
 
         a:hover {
             text-decoration: underline;
-            color: #0093ff;
+            color: #010615;
         }
     }
 
@@ -120,7 +89,7 @@ main {
 
         #email {
             padding: 0.5rem 0.8rem;
-            border: 1px solid #333;
+            border: 2px solid #333;
             background-color: transparent;
             border-radius: 2rem;
             margin: 0.3rem 0;
@@ -156,7 +125,12 @@ main {
             padding: 1rem;
             margin: 0 0 0.5rem 0;
             border-radius: 0.35rem;
-            background-color: #eee;
+            border: 2px solid #010615;
+            background-color: #f5f5f5;
+
+            a {
+                color: #002cb3;
+            }
         }
     }
 
@@ -196,19 +170,33 @@ footer {
     padding: 0.5rem;
 }
 
-/*post styling*/
+/*post styling*/ /*!FIX THIS*/
 
-h2 {
-    font-size: 2.7rem;
-    margin: 0 0 1rem 0;
-}
+main {
+    .blog--article {
+        margin: 0 0 1rem 0;
 
-p {
-    margin: 0.5rem 0;
-}
+        h2 {
+            font-size: 3rem;
+            margin: 0 0 1.5rem 0;
+        }
 
-img {
-    border-radius: 0.45rem;
+        h3 {
+            font-size: 1.9rem;
+            margin: 2rem 0 0.6rem 0;
+        }
+
+        p {
+            margin: 0.5rem 0;
+        }
+
+        img {
+            border-radius: 0.45rem;
+            height: 15rem;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
 }
 
 @media screen and (width >= 768px) {
@@ -241,8 +229,8 @@ img {
     }
 
     .container {
-        .hero__text  h1 {
-            font-size: 4rem;
+        .hero__text h1 {
+            font-size: 3.5rem;
         }
 
         .hero__section {
@@ -266,12 +254,31 @@ img {
 
             h2 {
                 font-size: 3.2rem;
+                align-self: baseline;
             }
         }
 
         .contact-section {
             padding: 1.5rem;
         }
+    }
+}
+
+@media screen and (width >= 992px) {
+    main {
+        margin: 2rem 5rem;
+    }
+
+    .container {
+        .hero__text h1 {
+            font-size: 4.5rem;
+        }
+    }
+}
+
+@media screen and (width >= 1200px) {
+    main {
+        margin: 2rem 11rem;
     }
 }
 

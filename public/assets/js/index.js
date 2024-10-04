@@ -7,3 +7,7 @@ document.getElementById("menu").addEventListener("click", (event) => {
 
   navList.classList.toggle("reveal");
 });
+
+const checkbox = document.querySelector(".theme");
+
+console.log(checkbox);

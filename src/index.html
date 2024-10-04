@@ -1,7 +1,7 @@
 ---
 title: Kaluba's Blog | Homepage
 layout: "layouts/base.njk"
-tagline: a simple blog by kaluba joan
+tagline: a guide to bloging by kaluba joan
 ---
 
 <div class="container">
@@ -37,7 +37,7 @@ tagline: a simple blog by kaluba joan
     <div class="blog-section">
         <h2>our recent stories</h2>
 
-        {%- for post in collections.post -%}
+        {%- for post in collections.featured -%}
         <div class="blog-card">
             <h4>{{ post.data.title }}</h4>
             <div class="text">

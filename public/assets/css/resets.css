@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 1;
+    color: #141414;
+}
+
+.hidden {
+    display: none;
+}
+
+.reveal {
+    display: flex !important;
+}
